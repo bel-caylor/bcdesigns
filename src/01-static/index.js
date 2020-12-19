@@ -1,4 +1,3 @@
-const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
 // Import SVG as React component using @svgr/webpack.
@@ -11,7 +10,7 @@ import logoWhiteURL from "../bv-logo-white.svg";
 
 // https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType("bcdesigns/static", {
-  title: __("Like & Subscribe", "bcdesigns"),
+  title: "Like & Subscribe", "bcdesigns",
   icon: { src: Logo },
   category: "bcdesigns",
 
@@ -23,11 +22,14 @@ registerBlockType("bcdesigns/static", {
           <img src={logoWhiteURL} alt="logo" />
         </figure>
         <div className="bcdesigns-info">
+          <div className="bcdesigns-nameplate">
+            {}
+          </div>
           <h3 className="bcdesigns-title">
-            {__("The Binaryville Podcast", "bcdesigns")}
+            {"The Binaryville Podcast"}
           </h3>
           <div className="bcdesigns-cta">
-            <a href="#">{__("Like & Subscribe!", "bcdesigns")}</a>
+            <a href="#">{"Like & Subscribe!"}</a>
           </div>
         </div>
       </div>
@@ -41,10 +43,10 @@ registerBlockType("bcdesigns/static", {
         </figure>
         <div className="bcdesigns-info">
           <h3 className="bcdesigns-title">
-            {__("The Binaryville Podcast", "bcdesigns")}
+            {"The Binaryville Podcast"}
           </h3>
           <div className="bcdesigns-cta">
-            <a href="/subscribe">{__("Like & Subscribe!", "bcdesigns")}</a>
+            <a href="/subscribe">{"Like & Subscribe!"}</a>
           </div>
         </div>
       </div>

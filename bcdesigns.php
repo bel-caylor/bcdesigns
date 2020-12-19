@@ -2,10 +2,10 @@
 
 /**
  * Plugin Name: BCDesigns
- * Plugin URI: https://github.com/LinkedInLearning/WPContentBlocks-Adv-5034179
- * Description: Custom block plugin from the LinkedIn Learning course "WordPress Content Blocks: Advanced".
+ * Plugin URI: https://github.com/bel-caylor/bcdesigns
+ * Description: BCDesigns Gutenberg Blocks
  * Version: 1.0.0
- * Author: Morten Rand-Hendriksen
+ * Author: Belinda Caylor
  *
  * @package bcdesigns
  */
