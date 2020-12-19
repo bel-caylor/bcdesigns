@@ -10,24 +10,24 @@ import { ReactComponent as Logo } from "../bv-logo.svg";
 import logoWhiteURL from "../bv-logo-white.svg";
 
 // https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-registerBlockType("podkit/static", {
-  title: __("Like & Subscribe", "podkit"),
+registerBlockType("bcdesigns/static", {
+  title: __("Like & Subscribe", "bcdesigns"),
   icon: { src: Logo },
-  category: "podkit",
+  category: "bcdesigns",
 
   // https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-edit-save/
   edit() {
     return (
-      <div className="podkit-block podkit-static">
-        <figure className="podkit-logo">
+      <div className="bcdesigns-block bcdesigns-static">
+        <figure className="bcdesigns-logo">
           <img src={logoWhiteURL} alt="logo" />
         </figure>
-        <div className="podkit-info">
-          <h3 className="podkit-title">
-            {__("The Binaryville Podcast", "podkit")}
+        <div className="bcdesigns-info">
+          <h3 className="bcdesigns-title">
+            {__("The Binaryville Podcast", "bcdesigns")}
           </h3>
-          <div className="podkit-cta">
-            <a href="#">{__("Like & Subscribe!", "podkit")}</a>
+          <div className="bcdesigns-cta">
+            <a href="#">{__("Like & Subscribe!", "bcdesigns")}</a>
           </div>
         </div>
       </div>
@@ -35,16 +35,16 @@ registerBlockType("podkit/static", {
   },
   save() {
     return (
-      <div className="podkit-block podkit-static">
-        <figure className="podkit-logo">
+      <div className="bcdesigns-block bcdesigns-static">
+        <figure className="bcdesigns-logo">
           <img src={logoWhiteURL} alt="logo" />
         </figure>
-        <div className="podkit-info">
-          <h3 className="podkit-title">
-            {__("The Binaryville Podcast", "podkit")}
+        <div className="bcdesigns-info">
+          <h3 className="bcdesigns-title">
+            {__("The Binaryville Podcast", "bcdesigns")}
           </h3>
-          <div className="podkit-cta">
-            <a href="/subscribe">{__("Like & Subscribe!", "podkit")}</a>
+          <div className="bcdesigns-cta">
+            <a href="/subscribe">{__("Like & Subscribe!", "bcdesigns")}</a>
           </div>
         </div>
       </div>

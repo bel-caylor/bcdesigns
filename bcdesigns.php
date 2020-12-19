@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Plugin Name: Podkit
+ * Plugin Name: BCDesigns
  * Plugin URI: https://github.com/LinkedInLearning/WPContentBlocks-Adv-5034179
  * Description: Custom block plugin from the LinkedIn Learning course "WordPress Content Blocks: Advanced".
  * Version: 1.0.0
  * Author: Morten Rand-Hendriksen
  *
- * @package podkit
+ * @package bcdesigns
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -17,10 +17,10 @@ defined( 'ABSPATH' ) || exit;
  * 
  * @link https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
  */
-add_action( 'init', 'podkit_load_textdomain' );
+add_action( 'init', 'bcdesigns_load_textdomain' );
 
-function podkit_load_textdomain() {
-	load_plugin_textdomain( 'podkit', false, basename( __DIR__ ) . '/languages' );
+function bcdesigns_load_textdomain() {
+	load_plugin_textdomain( 'bcdesigns', false, basename( __DIR__ ) . '/languages' );
 }
 
 /** 
@@ -28,10 +28,10 @@ function podkit_load_textdomain() {
  * 
  * @link https://developer.wordpress.org/reference/functions/add_image_size/
  */
-add_action( 'init', 'podkit_add_image_size' );
+add_action( 'init', 'bcdesigns_add_image_size' );
 
-function podkit_add_image_size() {
-	add_image_size( 'podkitFeatImg', 250, 250, array( 'center', 'center' ) ); 
+function bcdesigns_add_image_size() {
+	add_image_size( 'bcdesignsFeatImg', 250, 250, array( 'center', 'center' ) ); 
 }
 
 /** 
@@ -39,22 +39,22 @@ function podkit_add_image_size() {
  * 
  * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/image_size_names_choose
  */
-add_filter( 'image_size_names_choose', 'podkit_custom_sizes' );
+add_filter( 'image_size_names_choose', 'bcdesigns_custom_sizes' );
 
-function podkit_custom_sizes( $sizes ) {
+function bcdesigns_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-		'podkitFeatImg' => __('Podkit Featured Image'),
+		'bcdesignsFeatImg' => __('BCDesigns Featured Image'),
 	) );
 }
 
 /** 
- * Add custom "Podkit" block category
+ * Add custom "BCDesigns" block category
  * 
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
  */
-add_filter( 'block_categories', 'podkit_block_categories', 10, 2 );
+add_filter( 'block_categories', 'bcdesigns_block_categories', 10, 2 );
 
-function podkit_block_categories( $categories, $post ) {
+function bcdesigns_block_categories( $categories, $post ) {
 	if ( $post->post_type !== 'post' ) {
 		return $categories;
 	}
@@ -62,8 +62,8 @@ function podkit_block_categories( $categories, $post ) {
 		$categories,
 		array(
 			array(
-				'slug' => 'podkit',
-				'title' => __( 'Podkit', 'podkit' ),
+				'slug' => 'bcdesigns',
+				'title' => __( 'BCDesigns', 'bcdesigns' ),
 				'icon'  => 'microphone',
 			),
 		)
@@ -76,9 +76,9 @@ function podkit_block_categories( $categories, $post ) {
  *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
  */
-add_action( 'init', 'podkit_register_blocks' );
+add_action( 'init', 'bcdesigns_register_blocks' );
 
-function podkit_register_blocks() {
+function bcdesigns_register_blocks() {
 
 	// If Block Editor is not active, bail.
 	if ( ! function_exists( 'register_block_type' ) ) {
@@ -87,7 +87,7 @@ function podkit_register_blocks() {
 
 	// Retister the block editor script.
 	wp_register_script(
-		'podkit-editor-script',											// label
+		'bcdesigns-editor-script',											// label
 		plugins_url( 'build/index.js', __FILE__ ),						// script file
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),		// dependencies
 		filemtime( plugin_dir_path( __FILE__ ) . 'build/index.js' )		// set version as file last modified time
@@ -95,7 +95,7 @@ function podkit_register_blocks() {
 
 	// Register the block editor stylesheet.
 	wp_register_style(
-		'podkit-editor-styles',											// label
+		'bcdesigns-editor-styles',											// label
 		plugins_url( 'build/editor.css', __FILE__ ),					// CSS file
 		array( 'wp-edit-blocks' ),										// dependencies
 		filemtime( plugin_dir_path( __FILE__ ) . 'build/editor.css' )	// set version as file last modified time
@@ -103,7 +103,7 @@ function podkit_register_blocks() {
 
 	// Register the front-end stylesheet.
 	wp_register_style(
-		'podkit-front-end-styles',										// label
+		'bcdesigns-front-end-styles',										// label
 		plugins_url( 'build/style.css', __FILE__ ),						// CSS file
 		array( ),														// dependencies
 		filemtime( plugin_dir_path( __FILE__ ) . 'build/style.css' )	// set version as file last modified time
@@ -111,15 +111,15 @@ function podkit_register_blocks() {
 
 	// Array of block created in this plugin.
 	$blocks = [
-		'podkit/static'
+		'bcdesigns/static'
 	];
 	
 	// Loop through $blocks and register each block with the same script and styles.
 	foreach( $blocks as $block ) {
 		register_block_type( $block, array(
-			'editor_script' => 'podkit-editor-script',					// Calls registered script above
-			'editor_style' => 'podkit-editor-styles',					// Calls registered stylesheet above
-			'style' => 'podkit-front-end-styles',						// Calls registered stylesheet above
+			'editor_script' => 'bcdesigns-editor-script',					// Calls registered script above
+			'editor_style' => 'bcdesigns-editor-styles',					// Calls registered stylesheet above
+			'style' => 'bcdesigns-front-end-styles',						// Calls registered stylesheet above
 		) );	  
 	}
 
@@ -130,7 +130,7 @@ function podkit_register_blocks() {
 	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
 	 * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
 	 */
-	wp_set_script_translations( 'podkit-editor-script', 'podkit', plugin_dir_path( __FILE__ ) . '/languages' );
+	wp_set_script_translations( 'bcdesigns-editor-script', 'bcdesigns', plugin_dir_path( __FILE__ ) . '/languages' );
 	}
 
 }

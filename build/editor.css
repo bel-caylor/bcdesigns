@@ -2,12 +2,12 @@ figure {
 	margin: 0;
 }
 
-.podkit-img {
+.bcdesigns-img {
 	position: relative;
 	border: 1px solid white;
 }
 
-.podkit-img__button {
+.bcdesigns-img__button {
 	position: absolute;
 	bottom: 4px;
 	right: 4px;
@@ -15,64 +15,64 @@ figure {
 	border: 1px solid grey;
 }
 
-.podkit-title {
+.bcdesigns-title {
 	margin: 3px 3px 0 0;
 }
 
-.podkit-cta a {
-	color: var(--podkit-font-highlight-color)!important;
+.bcdesigns-cta a {
+	color: var(--bcdesigns-font-highlight-color)!important;
 }
 
-.podkit-url::before {
+.bcdesigns-url::before {
 	margin-right: .5em;
 	content: "↳";
 }
 
-.podkit-url {
+.bcdesigns-url {
 	display: flex;
 	margin-left: calc(20% + 2em);
 	padding: .5em .5em .5em 0;
 	font-family: sans-serif;
 }
 
-.podkit-url__input {
+.bcdesigns-url__input {
 	margin: 0 0 0 .5em;
 	padding: 0 .5em;
 	border: 1px solid hsl(0, 0%, 50%);
 	border-radius: 3px;
 }
 
-.podkit-cta .editor-url-input__button {
+.bcdesigns-cta .editor-url-input__button {
     align-self: center;
 }
 
-.podkit-cta form.editor-url-input__button-modal {
+.bcdesigns-cta form.editor-url-input__button-modal {
     position: absolute;
 }
 
-.podkit-dropdown {
+.bcdesigns-dropdown {
 	display: inline-block;
 	margin-left: .5em;
 	align-self: center;
 }
 
-.podkit-dropdown .components-button:active:enabled {
+.bcdesigns-dropdown .components-button:active:enabled {
 	vertical-align: inherit;
 }
 
-.podkit-dropdown__input {
+.bcdesigns-dropdown__input {
 	padding: 8px 8px 0;
 }
 
-.podkit-expanded .editor-rich-text__inline-toolbar {
+.bcdesigns-expanded .editor-rich-text__inline-toolbar {
 	justify-content: start;
 }
 
-.editor-styles-wrapper h3.podkit-title {
+.editor-styles-wrapper h3.bcdesigns-title {
 	font-weight: lighter;
 }
 
-.wp-block[data-align="full"] .podkit-block {
+.wp-block[data-align="full"] .bcdesigns-block {
 	padding: 3em;
 	box-shadow: none;
 }
